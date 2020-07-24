@@ -26,7 +26,7 @@ function Layout({ children }) {
               <SideNav />
             </Grid.Column>
             <Grid.Column width={12}>
-              <Segment>{children}</Segment>
+              <Container>{children}</Container>
             </Grid.Column>
           </Grid>
         </Container>
