@@ -30,14 +30,6 @@ function Header() {
           handleClick("/inventory");
         }}
       />
-      <Menu.Item
-        name="Cart"
-        active={activeItem === "/cart"}
-        position="right"
-        onClick={() => {
-          handleClick("/cart");
-        }}
-      />
     </StyledMenu>
   );
 }

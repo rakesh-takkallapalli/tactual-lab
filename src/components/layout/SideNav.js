@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Menu } from "semantic-ui-react";
 import { useHistory, useLocation } from "react-router-dom";
 function SideNav() {
-  const [activeItem, setActiveItem] = useState("/inventory");
+  const [activeItem, setActiveItem] = useState("/products");
   const history = useHistory();
   const location = useLocation();
 
@@ -18,9 +18,9 @@ function SideNav() {
   return (
     <Menu vertical color="grey">
       <Menu.Item
-        active={activeItem === "/inventory"}
+        active={activeItem === "/products"}
         onClick={() => {
-          handleClick("/inventory");
+          handleClick("/products");
         }}
       >
         View Inventory
@@ -34,9 +34,9 @@ function SideNav() {
         Add Stock
       </Menu.Item>
       <Menu.Item
-        active={activeItem === "/orderHistory"}
+        active={activeItem === "/orders"}
         onClick={() => {
-          handleClick("/orderHistory");
+          handleClick("/orders");
         }}
       >
         Order History

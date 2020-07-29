@@ -1,5 +1,6 @@
 import React from "react";
 import { Table } from "semantic-ui-react";
+import { useHistory } from "react-router-dom";
 
 const response = {
   data: {
@@ -58,6 +59,10 @@ const response = {
 };
 
 function Inventory() {
+  const history = useHistory();
+  function handleProduct(id) {
+    history.push(`/products/${id}`);
+  }
   return (
     <Table celled selectable>
       <Table.Header>
@@ -72,7 +77,12 @@ function Inventory() {
 
       <Table.Body>
         {response.data.products.map((product, index) => (
-          <Table.Row key={product.id}>
+          <Table.Row
+            key={product.id}
+            onClick={() => {
+              handleProduct(product.id);
+            }}
+          >
             <Table.Cell>{index + 1}</Table.Cell>
             <Table.Cell>{product.productName}</Table.Cell>
             <Table.Cell>{product.description}</Table.Cell>
